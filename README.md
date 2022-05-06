@@ -1,3 +1,3 @@
 # Codesignal-Solutions
 
-Solutions about algorithms form www.codesignal.com
+Solutions about algorithms from www.codesignal.com
