@@ -23,11 +23,11 @@
  *
  */
  
-public class CHESSBOARDCELLCOLOR {
+public class chessColorCellColor {
     
-    public static boolean chessColorCellColor(String cell1,String cell2){
+    public static boolean chessColorCellColorMethod(String cell1,String cell2){
 	
-	String[][] chessBoard = new String[8][8];
+	//String[][] chessBoard = new String[8][8];
 	
 	
 	if( cell1 == cell2){
@@ -38,7 +38,7 @@ public class CHESSBOARDCELLCOLOR {
     
     public static void main(String[] args) {
     	
-    	System.out.println(chessColorCellColor("Hola","Holas"));
+    	System.out.println(chessColorCellColorMethod("Hola","Holas"));
     	
     }
 }

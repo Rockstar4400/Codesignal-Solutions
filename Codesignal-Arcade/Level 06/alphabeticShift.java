@@ -32,9 +32,9 @@
  *
  */
  
-public class ALPHABETICSHIFT {
+public class alphabeticShift {
     
-   public static String alphabeticShift(String inputString){
+   public static String alphabeticShiftMethod(String inputString){
    	
    	String stringArray = inputString;
 	byte[] ASCII = stringArray.getBytes();	
@@ -67,7 +67,7 @@ public class ALPHABETICSHIFT {
     
     public static void main(String[] args) {
 
-    System.out.println(alphabeticShift("CRAZY"));
+    System.out.println(alphabeticShiftMethod("CRAZY"));
     
     }
 }
