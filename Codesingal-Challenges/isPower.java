@@ -41,7 +41,7 @@ String helloWorld(String name) {
 
 */
 
-    static boolean isPower(int n) {
+    static boolean isPowerMethod(int n) {
 
         if (n == 1) {
             return true;
@@ -65,7 +65,7 @@ String helloWorld(String name) {
 
     public static void main(String[] args) {
 
-        System.out.println(isPower(125)); // true
-        System.out.println(isPower(72)); // false
+        System.out.println(isPowerMethod(125)); // true
+        System.out.println(isPowerMethod(72)); // false
     }
 }

@@ -59,7 +59,7 @@ String helloWorld(String name) {
 
 public class insideCircle {
 
-    static boolean insideCircle(int[] point, int[] center, int radius) {
+    static boolean insideCircleMethod(int[] point, int[] center, int radius) {
         int x1 = point[0], y1 = point[1];
         int x2 = center[0], y2 = center[1];
         int deltaX = x2 - x1,deltaY = y2 - y1;
@@ -79,11 +79,11 @@ public class insideCircle {
         int[] p4 = {1, 1}, c4 = {2, 2};
         int[] p5 = {10,10}, c5 ={5,10};
 
-        System.out.println(insideCircle(p1,c1,1)); // false
-        System.out.println(insideCircle(p2,c2,3)); // true
-        System.out.println(insideCircle(p3,c3,2)); // true
-        System.out.println(insideCircle(p4,c4,2)); // true
-        System.out.println(insideCircle(p5,c5,5)); // true
+        System.out.println(insideCircleMethod(p1,c1,1)); // false
+        System.out.println(insideCircleMethod(p2,c2,3)); // true
+        System.out.println(insideCircleMethod(p3,c3,2)); // true
+        System.out.println(insideCircleMethod(p4,c4,2)); // true
+        System.out.println(insideCircleMethod(p5,c5,5)); // true
 
     }
 }

@@ -47,7 +47,7 @@ String helloWorld(String name) {
 
 public class avoidObstacles {
 
-    public static int avoidObstacles(int[] inputArray){
+    public static int avoidObstaclesMethod(int[] inputArray){
 
         int jump = 1;
         boolean fail = true;
@@ -73,7 +73,7 @@ public class avoidObstacles {
         //int[] input03 = {1, 4, 10, 6, 2};
         //int[] input04 = {1000, 999};
 
-        System.out.println(avoidObstacles(input01)); // 4
+        System.out.println(avoidObstaclesMethod(input01)); // 4
         //System.out.println(avoidObstacles(input02)); // 4
         //System.out.println(avoidObstacles(input03)); // 7
         //System.out.println(avoidObstacles(input04)); // 6

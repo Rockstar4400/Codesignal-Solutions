@@ -61,9 +61,9 @@ std::string helloWorld(std::string name) {
 
 */
 
-public class FINDPATH {
+public class findPath {
 
-    static boolean findPath(int[][] matrix) {
+    static boolean findPathMethod(int[][] matrix) {
 
         boolean path = true;
         int sizeMatrix = matrix.length, lengthMatrixZero = matrix[0].length;
@@ -178,15 +178,15 @@ public class FINDPATH {
 
 
 
-        System.out.println(findPath(test01));// true
-        System.out.println(findPath(test02));// false
-        System.out.println(findPath(test03));// true
-        System.out.println(findPath(test04));// true
-        System.out.println(findPath(test05));// false
-        System.out.println(findPath(test06));// true
-        System.out.println(findPath(test07));// false
-        System.out.println(findPath(test08));// true
-        System.out.println(findPath(test09));// false
-        System.out.println(findPath(test10));// true
+        System.out.println(findPathMethod(test01));// true
+        System.out.println(findPathMethod(test02));// false
+        System.out.println(findPathMethod(test03));// true
+        System.out.println(findPathMethod(test04));// true
+        System.out.println(findPathMethod(test05));// false
+        System.out.println(findPathMethod(test06));// true
+        System.out.println(findPathMethod(test07));// false
+        System.out.println(findPathMethod(test08));// true
+        System.out.println(findPathMethod(test09));// false
+        System.out.println(findPathMethod(test10));// true
     }
 }

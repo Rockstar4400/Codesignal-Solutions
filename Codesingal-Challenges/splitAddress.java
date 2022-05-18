@@ -1,4 +1,3 @@
-import java.sql.Array;
 
 /*
 
@@ -49,7 +48,7 @@ String helloWorld(String name) {
 */
 public class splitAddress {
 
-    static String[] splitAddress(String address) {
+    static String[] splitAddressMethod(String address) {
 
         String[] arrOfStr = address.split("\\:\\/\\/|\\.+\\w*\\/|\\.+\\w*", 0);
 
@@ -59,8 +58,8 @@ public class splitAddress {
 
     public static void main(String[] args) {
 
-        System.out.println(splitAddress("http://codesignal.com"));//["http","codesignal"]
-        System.out.println(splitAddress("http://stackoverflow.com/questions"));// ["http","stackoverflow","questions"]
+        System.out.println(splitAddressMethod("http://codesignal.com"));//["http","codesignal"]
+        System.out.println(splitAddressMethod("http://stackoverflow.com/questions"));// ["http","stackoverflow","questions"]
 
     }
 }

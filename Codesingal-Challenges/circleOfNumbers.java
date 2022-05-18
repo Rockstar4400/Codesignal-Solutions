@@ -46,7 +46,7 @@ String helloWorld(String name) {
 
 public class circleOfNumbers {
 
-    static int circleOfNumbers(int n, int firstNumber) {
+    static int circleOfNumbersMethod(int n, int firstNumber) {
         int mid = n/2,ind = firstNumber + mid,x = firstNumber + mid - n;
         if(firstNumber + mid >= n){
             return x;
@@ -57,8 +57,8 @@ public class circleOfNumbers {
 
     public static void main(String[] args) {
 
-        System.out.println(circleOfNumbers(10,2));// 7
-        System.out.println(circleOfNumbers(10,7));// 2
-        System.out.println(circleOfNumbers(6,3));// 0
+        System.out.println(circleOfNumbersMethod(10,2));// 7
+        System.out.println(circleOfNumbersMethod(10,7));// 2
+        System.out.println(circleOfNumbersMethod(6,3));// 0
     }
 }

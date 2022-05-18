@@ -45,7 +45,7 @@ import java.util.Set;
 
 public class arrayMode {
 
-    static int arrayMode(int[] sequence) {
+    static int arrayModeMethod(int[] sequence) {
 
         Set<Integer> diff = new HashSet<>();
 
@@ -77,7 +77,7 @@ public class arrayMode {
         int[] test01 = {1, 3, 3, 3, 1};
         int[] test02 = {1, 4, 10, 4, 2};
 
-        System.out.println(arrayMode(test01));
-        System.out.println(arrayMode(test02));
+        System.out.println(arrayModeMethod(test01));
+        System.out.println(arrayModeMethod(test02));
     }
 }

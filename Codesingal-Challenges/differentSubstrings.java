@@ -58,7 +58,7 @@ String helloWorld(String name) {
 
 */
 
-    static int differentSubstrings(String inputString) {
+    static int differentSubstringsMethod(String inputString) {
         Set<String> hashSet = new HashSet<>();
         for (int i = 1; i <= inputString.length(); i++) {
             for (int j = 0; i + j <= inputString.length(); j++) {
@@ -72,8 +72,8 @@ String helloWorld(String name) {
 
     public static void main(String[] args) {
 
-        System.out.println(differentSubstrings("abac")); // 9
-        System.out.println(differentSubstrings("abacaba")); // 21
+        System.out.println(differentSubstringsMethod("abac")); // 9
+        System.out.println(differentSubstringsMethod("abacaba")); // 21
 
     }
 }

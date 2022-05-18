@@ -89,13 +89,9 @@ String helloWorld(String name) {
 
 */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+public class isSkewSymmetricMatrix {
 
-public class ISSKEWSYMMETRICMATRIX {
-
-    static boolean isSkewSymmetricMatrix(int[][] matrix) {
+    static boolean isSkewSymmetricMatrixMethod(int[][] matrix) {
 
         int copyArray[][] = new int[matrix.length][matrix[0].length];
         int reAssign[][] = new int[matrix.length][matrix[0].length];
@@ -165,16 +161,16 @@ public class ISSKEWSYMMETRICMATRIX {
                           {0,0,0},
                          {10,0,0}};
 
-        System.out.println(isSkewSymmetricMatrix(test01)); // true
-        System.out.println(isSkewSymmetricMatrix(test02)); // false
-        System.out.println(isSkewSymmetricMatrix(test03)); // false
-        System.out.println(isSkewSymmetricMatrix(test04)); // true
-        System.out.println(isSkewSymmetricMatrix(test05)); // false
-        System.out.println(isSkewSymmetricMatrix(test06)); // true
-        System.out.println(isSkewSymmetricMatrix(test07)); // false
-        System.out.println(isSkewSymmetricMatrix(test08)); // true
-        System.out.println(isSkewSymmetricMatrix(test09)); // false
-        System.out.println(isSkewSymmetricMatrix(test10)); // true
+        System.out.println(isSkewSymmetricMatrixMethod(test01)); // true
+        System.out.println(isSkewSymmetricMatrixMethod(test02)); // false
+        System.out.println(isSkewSymmetricMatrixMethod(test03)); // false
+        System.out.println(isSkewSymmetricMatrixMethod(test04)); // true
+        System.out.println(isSkewSymmetricMatrixMethod(test05)); // false
+        System.out.println(isSkewSymmetricMatrixMethod(test06)); // true
+        System.out.println(isSkewSymmetricMatrixMethod(test07)); // false
+        System.out.println(isSkewSymmetricMatrixMethod(test08)); // true
+        System.out.println(isSkewSymmetricMatrixMethod(test09)); // false
+        System.out.println(isSkewSymmetricMatrixMethod(test10)); // true
 
     }
 }

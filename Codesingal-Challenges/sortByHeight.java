@@ -52,7 +52,7 @@ import java.util.Collections;
 
 public class sortByHeight {
 
-    static int[] sortByHeight(int[] a) {
+    static int[] sortByHeightMethod(int[] a) {
         ArrayList<Integer> pass = new ArrayList<>();
         int[] result = a;
 
@@ -82,6 +82,6 @@ public class sortByHeight {
     public static void main(String[] args) {
         int[] test01 = {-1, 150, 190, 170, -1, -1, 160, 180};
 
-        System.out.println(sortByHeight(test01));
+        System.out.println(sortByHeightMethod(test01));
     }
 }

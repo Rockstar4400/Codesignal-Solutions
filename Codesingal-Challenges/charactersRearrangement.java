@@ -36,9 +36,9 @@ true if the desired rearrangement is possible, false otherwise.
 
 */
 
-public class CHARACTERREARRANGEMENT {
+public class charactersRearrangement {
 
-    static boolean charactersRearrangement(String string1, String string2) {
+    static boolean charactersRearrangementMethod(String string1, String string2) {
 
         // BEST SOLUTION:
         // return 1 >> a.chars().sum() - b.chars().sum();
@@ -70,15 +70,15 @@ public class CHARACTERREARRANGEMENT {
     }
 
     public static void main(String[] args) {
-        System.out.println(charactersRearrangement("abcd","cbad"));// true
-        System.out.println(charactersRearrangement("a","b"));// false
-        System.out.println(charactersRearrangement("aaa","aaaa"));// false
-        System.out.println(charactersRearrangement("abcdef","badcfe"));// true
-        System.out.println(charactersRearrangement("aaad","aaa"));// false
-        System.out.println(charactersRearrangement("abc","cabd"));// false
-        System.out.println(charactersRearrangement("xyzt","ztyx"));// true
-        System.out.println(charactersRearrangement("z","y"));// false
-        System.out.println(charactersRearrangement(
+        System.out.println(charactersRearrangementMethod("abcd","cbad"));// true
+        System.out.println(charactersRearrangementMethod("a","b"));// false
+        System.out.println(charactersRearrangementMethod("aaa","aaaa"));// false
+        System.out.println(charactersRearrangementMethod("abcdef","badcfe"));// true
+        System.out.println(charactersRearrangementMethod("aaad","aaa"));// false
+        System.out.println(charactersRearrangementMethod("abc","cabd"));// false
+        System.out.println(charactersRearrangementMethod("xyzt","ztyx"));// true
+        System.out.println(charactersRearrangementMethod("z","y"));// false
+        System.out.println(charactersRearrangementMethod(
                 "sadlkfjaslkjoiureoqiwuekdlaskjdlsakj" +
                 "dqweiqulkajdlkasjdlkjeoiuwqoeiquwdje" +
                 "ahfakjfhkqjwheoique",
@@ -86,7 +86,7 @@ public class CHARACTERREARRANGEMENT {
                 "rikokdauhduouqasuejkidslkklqedjjsaaw" +
                 "hfqdwdielqjsisjlkaa")
                 );// true
-        System.out.println(charactersRearrangement(
+        System.out.println(charactersRearrangementMethod(
                 "sadlkfjaslkjoiureoqiwuekdlaskjdlsakjd" +
                 "qweiqulkajdlkasjdlkjeoiuwqoeiquwdjeah" +
                 "fakjfhkqjwheoique",

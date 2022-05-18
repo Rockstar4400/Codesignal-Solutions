@@ -44,7 +44,7 @@ String helloWorld(String name) {
 */
 public class adjacentElementsProduct {
 
-    static int adjacentElementsProduct(int[] inputArray) {
+    static int adjacentElementsProductMethod(int[] inputArray) {
         int bestResult = 0;
         int bestResultN = -1000;
         int k = 2;
@@ -75,7 +75,7 @@ public class adjacentElementsProduct {
         int[] test01 = {3, 6, -2, -5, 7, 3};
         int[] test02 = {-23, 4, -3, 8, -12};
 
-        System.out.println(adjacentElementsProduct(test01));//21
-        System.out.println(adjacentElementsProduct(test02));//-12
+        System.out.println(adjacentElementsProductMethod(test01));//21
+        System.out.println(adjacentElementsProductMethod(test02));//-12
     }
 }

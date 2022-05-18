@@ -10,9 +10,9 @@
 *
 */
 
-public class MYCONCAT {
+public class myConcat {
 
-    static String myConcat(String[] strings, String separator) {
+    static String myConcatMethod(String[] strings, String separator) {
 
         String pass = "";
 
@@ -28,7 +28,7 @@ public class MYCONCAT {
         String[] test01 = {"Code", "Fight","On","!"};// Separator /
         String[] test02 = {"Code", "Fight", "On", "!"};// Separator " "
 
-        System.out.println(myConcat(test01,"/")); // Code/Fight/On/!/
-        System.out.println(myConcat(test02," ")); // Code Fight On !
+        System.out.println(myConcatMethod(test01,"/")); // Code/Fight/On/!/
+        System.out.println(myConcatMethod(test02," ")); // Code Fight On !
     }
 }

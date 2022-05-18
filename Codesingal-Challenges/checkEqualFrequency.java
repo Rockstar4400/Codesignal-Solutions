@@ -41,9 +41,9 @@ String helloWorld(String name) {
 
 import java.util.Arrays;
 
-public class CHECKEQUALFRECUENCY {
+public class checkEqualFrequency {
 
-    static boolean checkEqualFrequency(int[] inputArray) {
+    static boolean checkEqualFrequencyMethod(int[] inputArray) {
 
         int counter1 = 0;
         int counter2 = 0;
@@ -81,9 +81,9 @@ public class CHECKEQUALFRECUENCY {
         int[] test03 = {239}; // true
         int[] test04 = {239, 240, 241}; // true
 
-        System.out.println(checkEqualFrequency(test01));
-        System.out.println(checkEqualFrequency(test02));
-        System.out.println(checkEqualFrequency(test03));
-        System.out.println(checkEqualFrequency(test04));
+        System.out.println(checkEqualFrequencyMethod(test01));
+        System.out.println(checkEqualFrequencyMethod(test02));
+        System.out.println(checkEqualFrequencyMethod(test03));
+        System.out.println(checkEqualFrequencyMethod(test04));
     }
 }

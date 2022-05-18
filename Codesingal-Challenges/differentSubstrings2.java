@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class differentSubstrings {
+public class differentSubstrings2 {
 /*
 
 CODESIGNAL - CHALLENGES - DIFFERENTSUBSTRINGS

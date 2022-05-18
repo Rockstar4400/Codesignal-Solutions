@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Stack;
 
 public class isPangram {
 
@@ -49,7 +45,7 @@ String helloWorld(String name) {
 }
 */
 
-    static boolean isPangram(String sentence) {
+    static boolean isPangramMethod(String sentence) {
         String lo = sentence.toLowerCase();
         String re = lo.replaceAll("[^a-zA-Z]","");
         for (int i = 97; i <= 122; i++) {
@@ -62,8 +58,8 @@ String helloWorld(String name) {
 
 
     public static void main(String[] args) {
-        System.out.println(isPangram("The quick brown fox jumps over the lazy dog.")); // true
-        System.out.println(isPangram("abcdefghijklmnopqrstuvwxya")); // false
-        System.out.println(isPangram("qweRtyuIOPsdafgHJKlZXNmcbvnxiswx02"));// true
+        System.out.println(isPangramMethod("The quick brown fox jumps over the lazy dog.")); // true
+        System.out.println(isPangramMethod("abcdefghijklmnopqrstuvwxya")); // false
+        System.out.println(isPangramMethod("qweRtyuIOPsdafgHJKlZXNmcbvnxiswx02"));// true
     }
 }

@@ -46,7 +46,7 @@ import java.util.Set;
 
 public class differentValuesInMultiplicationTable2 {
 
-    static int differentValuesInMultiplicationTable2(int n, int m) {
+    static int differentValuesInMultiplicationTable2Method(int n, int m) {
 
         int[][] table = new int[n + 1][m + 1];
         Set<Integer> hashSet = new HashSet<>();
@@ -67,7 +67,7 @@ public class differentValuesInMultiplicationTable2 {
 
     public static void main(String[] args) {
 
-        System.out.println(differentValuesInMultiplicationTable2(3,2));//5
-        System.out.println(differentValuesInMultiplicationTable2(4,4));//9
+        System.out.println(differentValuesInMultiplicationTable2Method(3,2));//5
+        System.out.println(differentValuesInMultiplicationTable2Method(4,4));//9
     }
 }

@@ -52,7 +52,7 @@ std::string helloWorld(std::string name) {
     return "Hello, " + name;
 }
 */
-    static int differentValues(int[] a, int d) {
+    static int differentValuesMethod(int[] a, int d) {
         int result = -1;
         for (int i = 0; i < a.length ; i++) {
 
@@ -84,13 +84,13 @@ std::string helloWorld(std::string name) {
         int[] custom01 = {3,7,3};
         int[] custom02 = {3,7,3,4,7,10};
 
-        System.out.println(differentValues(test01,2)); // 2
-        System.out.println(differentValues(test02,3)); // -1
-        System.out.println(differentValues(test03,3)); // 2
-        System.out.println(differentValues(test04,5)); // 5
-        System.out.println(differentValues(custom01,3)); // -1
+        System.out.println(differentValuesMethod(test01,2)); // 2
+        System.out.println(differentValuesMethod(test02,3)); // -1
+        System.out.println(differentValuesMethod(test03,3)); // 2
+        System.out.println(differentValuesMethod(test04,5)); // 5
+        System.out.println(differentValuesMethod(custom01,3)); // -1
 
-        System.out.println(differentValues(custom02,3)); // -1
+        System.out.println(differentValuesMethod(custom02,3)); // -1
     }
 }
 
