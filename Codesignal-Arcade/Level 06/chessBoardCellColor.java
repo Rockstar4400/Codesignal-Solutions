@@ -5,8 +5,7 @@ CODEFIGTHS - ARCADE - LEVEL 06 - CHESSBOARDCELLCOLOR
 Source help:
 https://stackoverflow.com/questions/191757/how-to-concatenate-a-stdstring-and-an-int
 
-Given two cells on the standard chess board,
-determine whether they have the same color or not.
+Given two cells on the standard chess board, determine whether they have the same color or not.
 
 Example
 
@@ -44,10 +43,37 @@ std::string helloWorld(std::string name) {
 public class chessBoardCellColor {
 
     public static boolean chessBoardCellColorMethod(String cell1, String cell2){
-        return true;
+
+        if(cell1.length() == 2 && cell2.length() == 2){
+            int v1 = Character.getNumericValue(cell1.charAt(0));
+            int v2 = Character.getNumericValue(cell1.charAt(1));
+            int v3 = Character.getNumericValue(cell2.charAt(0));
+            int v4 = Character.getNumericValue(cell2.charAt(1));
+            int sum1 = v1 + v3;
+            int sum2 = v2 + v4;
+
+            if(v1 >= 10 && v3 <= 18 && v2 >= 1 && v4 <= 8){
+                if(sum1 % 2 == 0){
+                    if(sum2 % 2 == 0){
+                        return true;
+                    }
+                }else if (sum1 % 2 != 0){
+                    if(sum2 % 2 != 0){
+                        return true;
+                    }
+                }
+            }
+            return false;    
+        }
+        else{
+            return false;
+        }
     }
 
     public static void main(String[] args) {
-        System.out.print(chessBoardCellColorMethod("1", "2"));
+        System.out.print(chessBoardCellColorMethod("A1", "C3") + "\n"); // true
+        System.out.print(chessBoardCellColorMethod("A1", "H3") + "\n"); // false
+        System.out.print(chessBoardCellColorMethod("A1", "A2") + "\n"); // false
+        System.out.print(chessBoardCellColorMethod("A1", "B2") + "\n"); // true
     }
 }
