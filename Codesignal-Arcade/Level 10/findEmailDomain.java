@@ -48,7 +48,7 @@ String helloWorld(String name) {
 */
 public class findEmailDomain {
 
-    static String findEmailDomain(String address) {
+    static String findEmailDomainMethod(String address) {
         String regex = "[^@]*.$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(address);
@@ -60,6 +60,6 @@ public class findEmailDomain {
 
 
     public static void main(String[] args) {
-        System.out.println(findEmailDomain("admin@mailserver2.ru"));//mailserver2.ru
+        System.out.println(findEmailDomainMethod("admin@mailserver2.ru"));//mailserver2.ru
     }
 }

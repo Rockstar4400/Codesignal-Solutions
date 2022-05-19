@@ -29,7 +29,7 @@ Guaranteed constraints:
 
 public class buildPalindrome {
 
-    static String buildPalindrome(String st) {
+    static String buildPalindromeMethod(String st) {
 
 
 
@@ -40,7 +40,7 @@ public class buildPalindrome {
 
     public static void main(String[] args) {
 
-        System.out.println(buildPalindrome("abcdc"));// abcdcba
+        System.out.println(buildPalindromeMethod("abcdc"));// abcdcba
         //System.out.println(buildPalindrome("ababab"));// abababa
         //System.out.println(buildPalindrome("abba"));// abba
         //System.out.println(buildPalindrome("abaa"));// abaaba
