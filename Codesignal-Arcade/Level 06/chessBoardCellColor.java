@@ -4,6 +4,7 @@ CODEFIGTHS - ARCADE - LEVEL 06 - CHESSBOARDCELLCOLOR
 
 Source help:
 https://stackoverflow.com/questions/191757/how-to-concatenate-a-stdstring-and-an-int
+https://stackoverflow.com/questions/4329275/get-char-value-in-java
 
 Given two cells on the standard chess board, determine whether they have the same color or not.
 
