@@ -1,3 +1,4 @@
+
 /*
 
 CODESIGNAL - LEVEL 10 - BUILDPALINDROME
@@ -31,24 +32,68 @@ public class buildPalindrome {
 
     static String buildPalindromeMethod(String st) {
 
+        boolean p = true;
+        int index = 0;
+        int lengthString = 0;
 
+        for(int i = 0; i < st.length()/2 ;i++){
+            if(st.charAt(i) != st.charAt(st.length() - i -1)){
+                p = false;
+            }
+        }
 
+        if (!p) {
+            try {
+                outerLoop: 
+                for (int i = st.length() - 2; i >= 0; i--) {
+                    if (st.charAt(i - 1) == st.charAt(i + 1)) {
+                        if(lengthString <= st.substring(i - 1, i + 2).length()){
+                            index = i;
+                            lengthString = st.substring(i - 1, i + 2).length();
+                        }
+                        try {
+                            innerLoop: 
+                            for (int j = i; i >= j; j--) {
+                                if (st.charAt(j - 2) == st.charAt(j + 2)) {
+                                    if(lengthString <= st.substring(i - 2, i + 3).length()){
+                                        index = j;
+                                        lengthString = st.substring(j - 2, j + 3).length();
+                                    }
+                                } else {
+                                    break innerLoop;
+                                }
+                            }
+                        } catch (StringIndexOutOfBoundsException e) {
+                            continue outerLoop;
+                        }
+                    } else {
+                        continue outerLoop;
+                    }
+                }
+            } catch (StringIndexOutOfBoundsException e) {
+                    
+            }
+            System.out.println(index);
+            return "";
 
-        return st;
+        } else {
+            return st;
+        }
     }
 
 
     public static void main(String[] args) {
+        //System.out.println(buildPalindromeMethod("abcdc"));// abcdc ba - 3
+        //System.out.println(buildPalindromeMethod("ababab"));// ababab a - 3
+        //System.out.println(buildPalindromeMethod("abba"));// abba - Palindrome
+        System.out.println(buildPalindromeMethod("abaa"));// abaa ba - 3 ?
+        //System.out.println(buildPalindromeMethod("aaaaba"));// aaaab aaaa - 4
+        //System.out.println(buildPalindromeMethod("abc"));// abc ba - 2
+        //System.out.println(buildPalindromeMethod("kebab"));// kebab ek - 3
+        //System.out.println(buildPalindromeMethod("abccba"));// abccba - Palindrome
+        //System.out.println(buildPalindromeMethod("abcabc"));// abcabc bacba - 5
+        //System.out.println(buildPalindromeMethod("cbdbedffcg"));// cbdbedffcg cffdebdbc - 9
 
-        System.out.println(buildPalindromeMethod("abcdc"));// abcdcba
-        //System.out.println(buildPalindrome("ababab"));// abababa
-        //System.out.println(buildPalindrome("abba"));// abba
-        //System.out.println(buildPalindrome("abaa"));// abaaba
-//        System.out.println(buildPalindrome("abc"));// abcba
-//        System.out.println(buildPalindrome("kebab"));// kebabek
-//        System.out.println(buildPalindrome("abccba"));// abccba
-//        System.out.println(buildPalindrome("abcabc"));// abcabcbacba
-//        System.out.println(buildPalindrome("cbdbedffcg"));// cbdbedffcgcffdebdbc
 
     }
 }
