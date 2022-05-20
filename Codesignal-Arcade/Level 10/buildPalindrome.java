@@ -1,3 +1,4 @@
+import java.util.stream.IntStream;
 
 /*
 
@@ -27,14 +28,12 @@ Guaranteed constraints:
 
 */
 
-
 public class buildPalindrome {
 
     static String buildPalindromeMethod(String st) {
-
+        StringBuilder stBuilder = new StringBuilder();
+        stBuilder.append(st.charAt(st.length() - 1));
         boolean p = true;
-        int index = 0;
-        int lengthString = 0;
 
         for(int i = 0; i < st.length()/2 ;i++){
             if(st.charAt(i) != st.charAt(st.length() - i -1)){
@@ -43,57 +42,45 @@ public class buildPalindrome {
         }
 
         if (!p) {
-            try {
-                outerLoop: 
-                for (int i = st.length() - 2; i >= 0; i--) {
-                    if (st.charAt(i - 1) == st.charAt(i + 1)) {
-                        if(lengthString <= st.substring(i - 1, i + 2).length()){
-                            index = i;
-                            lengthString = st.substring(i - 1, i + 2).length();
-                        }
-                        try {
-                            innerLoop: 
-                            for (int j = i; i >= j; j--) {
-                                if (st.charAt(j - 2) == st.charAt(j + 2)) {
-                                    if(lengthString <= st.substring(i - 2, i + 3).length()){
-                                        index = j;
-                                        lengthString = st.substring(j - 2, j + 3).length();
-                                    }
-                                } else {
-                                    break innerLoop;
-                                }
-                            }
-                        } catch (StringIndexOutOfBoundsException e) {
-                            continue outerLoop;
-                        }
-                    } else {
-                        continue outerLoop;
+
+            for (int i = st.length() - 1; i >= 1; i--) {
+
+                stBuilder.insert(0, st.charAt(i - 1));
+
+                for (int j = 0; j <= stBuilder.length() / 2; j++) {
+                    if (stBuilder.charAt(j) != stBuilder.charAt(stBuilder.length() - 1)) {
+                        p = false;
                     }
                 }
-            } catch (StringIndexOutOfBoundsException e) {
-                    
-            }
-            System.out.println(index);
-            return "";
 
-        } else {
+                if (p) {
+                    continue;
+                } else {
+                    stBuilder.append(st.charAt(i - 1));
+                }
+            }
+        }else{
             return st;
         }
+        //return "";
+        return stBuilder.toString();
     }
 
-
     public static void main(String[] args) {
-        //System.out.println(buildPalindromeMethod("abcdc"));// abcdc ba - 3
-        //System.out.println(buildPalindromeMethod("ababab"));// ababab a - 3
+         //System.out.println(buildPalindromeMethod("abcdc"));// abcdc ba - 3
+        // System.out.println(buildPalindromeMethod("ababab"));// ababab a - 3
         //System.out.println(buildPalindromeMethod("abba"));// abba - Palindrome
-        System.out.println(buildPalindromeMethod("abaa"));// abaa ba - 3 ?
-        //System.out.println(buildPalindromeMethod("aaaaba"));// aaaab aaaa - 4
-        //System.out.println(buildPalindromeMethod("abc"));// abc ba - 2
-        //System.out.println(buildPalindromeMethod("kebab"));// kebab ek - 3
-        //System.out.println(buildPalindromeMethod("abccba"));// abccba - Palindrome
-        //System.out.println(buildPalindromeMethod("abcabc"));// abcabc bacba - 5
-        //System.out.println(buildPalindromeMethod("cbdbedffcg"));// cbdbedffcg cffdebdbc - 9
+         System.out.println(buildPalindromeMethod("abaa"));// abaa ba - 3 ?
+        // System.out.println(buildPalindromeMethod("aaaaba"));// aaaab aaaa - 4
+        // System.out.println(buildPalindromeMethod("abc"));// abc ba - 2
+        // System.out.println(buildPalindromeMethod("kebab"));// kebab ek - 3
+         //System.out.println(buildPalindromeMethod("abccba"));// abccba - Palindrome
+        // System.out.println(buildPalindromeMethod("abcabc"));// abcabc bacba - 5
+        // System.out.println(buildPalindromeMethod("cbdbedffcg"));// cbdbedffcg cffdebdbc - 9
 
-
+        // System.out.println(buildPalindromeMethod("aaa"));// aaa
+        //System.out.println(buildPalindromeMethod("bba"));// bba bb
+        // System.out.println(buildPalindromeMethod("cxa"));// cxa xc
+        // System.out.println(buildPalindromeMethod("baa"));// baa b
     }
 }
