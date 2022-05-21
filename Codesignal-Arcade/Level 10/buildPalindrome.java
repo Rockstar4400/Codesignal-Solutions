@@ -1,5 +1,3 @@
-import java.util.stream.IntStream;
-
 /*
 
 CODESIGNAL - LEVEL 10 - BUILDPALINDROME
@@ -36,7 +34,6 @@ public class buildPalindrome {
         StringBuilder stBuilder = new StringBuilder();
         stBuilder.append(st.substring(st.length() - 3, st.length()));
         StringBuilder stBuilder2 = new StringBuilder();
-        String stBuilder3 = "";
         // System.out.println(stBuilder);
 
         for (int i = 0; i < st.length() / 2; i++) {
@@ -61,9 +58,7 @@ public class buildPalindrome {
             if (palindrome) {// Si es palindromo
                 if (st.length() > 3) {
                      //System.out.println(stBuilder);
-                    outerLoop:
                     for (int i = st.length() - 3; i >= 1; i--) {
-                        //stBuilder3 = stBuilder.toString();
                         stBuilder.insert(0, st.charAt(i-1));
                         //System.out.println(stBuilder);
                         for (int j = 0; j <= stBuilder.length() / 2; j++) {
@@ -94,17 +89,9 @@ public class buildPalindrome {
                             //System.out.println(stBuilder2.charAt(stBuilder2.length() - x - 1));
                             if (stBuilder2.charAt(x) != stBuilder2.charAt(stBuilder2.length() - x - 1)) {
                                 val = false;
-                                //stBuilder.append(stBuilder3);
-                                //break;
-                                //continue;
-                                //return stBuilder2.toString();
+                                break;
                             } else {
                                 val = true;
-                                //continue outerLoop;
-                                //return stBuilder2.toString();
-                                //stBuilder2.setLength(0);
-                                //stBuilder.append(stBuilder3);
-                                //break;
                             }
                         }
                         if(val == true){return stBuilder2.toString();}
@@ -147,22 +134,23 @@ public class buildPalindrome {
     }
 
     public static void main(String[] args) {
-        System.out.println(buildPalindromeMethod("abcdc"));// abcdc ba - 3
-        System.out.println(buildPalindromeMethod("ababab"));// ababab a - 3 ?
-        System.out.println(buildPalindromeMethod("abba"));// abba - Palindrome
-        System.out.println(buildPalindromeMethod("abaa"));// abaa ba - 3 ?
-        System.out.println(buildPalindromeMethod("aaaaba"));// aaaaba aaa - 4
-        System.out.println(buildPalindromeMethod("abc"));// abc ba - 2
-        System.out.println(buildPalindromeMethod("kebab"));// kebab ek - 3
-        System.out.println(buildPalindromeMethod("abccba"));// abccba - Palindrome
-        System.out.println(buildPalindromeMethod("abcabc"));// abcabc bacba - 5
-        System.out.println(buildPalindromeMethod("cbdbedffcg"));// cbdbedffcg cffdebdbc - 9
+        // System.out.println(buildPalindromeMethod("abcdc"));// abcdc ba - 3
+        // System.out.println(buildPalindromeMethod("ababab"));// ababab a - 3 ?
+        // System.out.println(buildPalindromeMethod("abba"));// abba - Palindrome
+        // System.out.println(buildPalindromeMethod("abaa"));// abaa ba - 3 ?
+        // System.out.println(buildPalindromeMethod("aaaaba"));// aaaaba aaa - 4
+        // System.out.println(buildPalindromeMethod("abc"));// abc ba - 2
+        // System.out.println(buildPalindromeMethod("kebab"));// kebab ek - 3
+        // System.out.println(buildPalindromeMethod("abccba"));// abccba - Palindrome
+        // System.out.println(buildPalindromeMethod("abcabc"));// abcabc bacba - 5
+        // System.out.println(buildPalindromeMethod("cbdbedffcg"));// cbdbedffcg cffdebdbc - 9
 
         // Custom tests:
-        System.out.println(buildPalindromeMethod("aaa"));// aaa
-        System.out.println(buildPalindromeMethod("bba"));// bba bb
-        System.out.println(buildPalindromeMethod("cxa"));// cxa xc
+        // System.out.println(buildPalindromeMethod("aaa"));// aaa
+        // System.out.println(buildPalindromeMethod("bba"));// bba bb
+        // System.out.println(buildPalindromeMethod("cxa"));// cxa xc
+        // System.out.println(buildPalindromeMethod("baa"));// baa b
 
-        System.out.println(buildPalindromeMethod("baa"));// baa b
+        System.out.println(buildPalindromeMethod("hasdlaaa"));// hasdlaaa ldsa
     }
 }
