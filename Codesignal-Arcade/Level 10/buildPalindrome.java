@@ -31,56 +31,138 @@ Guaranteed constraints:
 public class buildPalindrome {
 
     static String buildPalindromeMethod(String st) {
-        StringBuilder stBuilder = new StringBuilder();
-        stBuilder.append(st.charAt(st.length() - 1));
-        boolean p = true;
+        boolean palindrome = true;
 
-        for(int i = 0; i < st.length()/2 ;i++){
-            if(st.charAt(i) != st.charAt(st.length() - i -1)){
-                p = false;
+        StringBuilder stBuilder = new StringBuilder();
+        stBuilder.append(st.substring(st.length() - 3, st.length()));
+        StringBuilder stBuilder2 = new StringBuilder();
+        String stBuilder3 = "";
+        // System.out.println(stBuilder);
+
+        for (int i = 0; i < st.length() / 2; i++) {
+            if (st.charAt(i) != st.charAt(st.length() - i - 1)) {
+                palindrome = false;
+                break;
+            } else {
+                palindrome = true;
             }
         }
 
-        if (!p) {
-
-            for (int i = st.length() - 1; i >= 1; i--) {
-
-                stBuilder.insert(0, st.charAt(i - 1));
-
-                for (int j = 0; j <= stBuilder.length() / 2; j++) {
-                    if (stBuilder.charAt(j) != stBuilder.charAt(stBuilder.length() - 1)) {
-                        p = false;
-                    }
-                }
-
-                if (p) {
-                    continue;
+        if (!palindrome) {
+            for (int i = 0; i < stBuilder.length() / 2; i++) {
+                if (stBuilder.charAt(i) != stBuilder.charAt(stBuilder.length() - i - 1)) {
+                    palindrome = false;
+                    break;
                 } else {
-                    stBuilder.append(st.charAt(i - 1));
+                    palindrome = true;
                 }
             }
-        }else{
+
+            if (palindrome) {// Si es palindromo
+                if (st.length() > 3) {
+                     //System.out.println(stBuilder);
+                    outerLoop:
+                    for (int i = st.length() - 3; i >= 1; i--) {
+                        //stBuilder3 = stBuilder.toString();
+                        stBuilder.insert(0, st.charAt(i-1));
+                        //System.out.println(stBuilder);
+                        for (int j = 0; j <= stBuilder.length() / 2; j++) {
+                             //System.out.println(stBuilder.charAt(j));
+                             //System.out.println(stBuilder.charAt(stBuilder.length() - j - 1));
+                            if (stBuilder.charAt(j) != stBuilder.charAt(stBuilder.length() - j - 1)) {
+                                palindrome = false;
+                                break;
+                            } else {
+                                palindrome = true;
+                            }
+                        }
+
+                        if (palindrome) {
+                            continue;
+                        } else {
+                            stBuilder.append(st.charAt(i - 1));
+                            stBuilder2.setLength(0);
+                            stBuilder2.append(stBuilder);
+                        }
+
+                        stBuilder2.insert(0,st.substring(0, i-1));
+                        //System.out.println(stBuilder2);
+                        boolean val = true;
+                        for (int x = 0; x < stBuilder2.length() / 2; x++) {
+                            
+                            //System.out.println(stBuilder2.charAt(x));
+                            //System.out.println(stBuilder2.charAt(stBuilder2.length() - x - 1));
+                            if (stBuilder2.charAt(x) != stBuilder2.charAt(stBuilder2.length() - x - 1)) {
+                                val = false;
+                                //stBuilder.append(stBuilder3);
+                                //break;
+                                //continue;
+                                //return stBuilder2.toString();
+                            } else {
+                                val = true;
+                                //continue outerLoop;
+                                //return stBuilder2.toString();
+                                //stBuilder2.setLength(0);
+                                //stBuilder.append(stBuilder3);
+                                //break;
+                            }
+                        }
+                        if(val == true){return stBuilder2.toString();}
+                    }
+                    return stBuilder.toString();
+                } else {
+                    return st;
+                }
+            } else { // Si no es palindromo
+                
+                    stBuilder.setLength(0);
+                    stBuilder.append(st.substring(st.length() - 1, st.length()));
+                    for (int i = st.length() - 1; i >= 1; i--) {
+
+                        stBuilder.insert(0, st.charAt(i - 1));
+
+                        for (int j = 0; j <= stBuilder.length() / 2; j++) {
+                            // System.out.println(stBuilder.charAt(j));
+                            // System.out.println(stBuilder.charAt(stBuilder.length() - j - 1));
+                            if (stBuilder.charAt(j) != stBuilder.charAt(stBuilder.length() - j - 1)) {
+                                palindrome = false;
+                                break;
+                            } else {
+                                palindrome = true;
+                            }
+                        }
+
+                        if (palindrome) {
+                            continue;
+                        } else {
+                            stBuilder.append(st.charAt(i - 1));
+                        }
+                    }
+                    return stBuilder.toString();
+                
+            }
+        } else {
             return st;
         }
-        //return "";
-        return stBuilder.toString();
     }
 
     public static void main(String[] args) {
-         //System.out.println(buildPalindromeMethod("abcdc"));// abcdc ba - 3
-        // System.out.println(buildPalindromeMethod("ababab"));// ababab a - 3
-        //System.out.println(buildPalindromeMethod("abba"));// abba - Palindrome
-         System.out.println(buildPalindromeMethod("abaa"));// abaa ba - 3 ?
-        // System.out.println(buildPalindromeMethod("aaaaba"));// aaaab aaaa - 4
-        // System.out.println(buildPalindromeMethod("abc"));// abc ba - 2
-        // System.out.println(buildPalindromeMethod("kebab"));// kebab ek - 3
-         //System.out.println(buildPalindromeMethod("abccba"));// abccba - Palindrome
-        // System.out.println(buildPalindromeMethod("abcabc"));// abcabc bacba - 5
-        // System.out.println(buildPalindromeMethod("cbdbedffcg"));// cbdbedffcg cffdebdbc - 9
+        System.out.println(buildPalindromeMethod("abcdc"));// abcdc ba - 3
+        System.out.println(buildPalindromeMethod("ababab"));// ababab a - 3 ?
+        System.out.println(buildPalindromeMethod("abba"));// abba - Palindrome
+        System.out.println(buildPalindromeMethod("abaa"));// abaa ba - 3 ?
+        System.out.println(buildPalindromeMethod("aaaaba"));// aaaaba aaa - 4
+        System.out.println(buildPalindromeMethod("abc"));// abc ba - 2
+        System.out.println(buildPalindromeMethod("kebab"));// kebab ek - 3
+        System.out.println(buildPalindromeMethod("abccba"));// abccba - Palindrome
+        System.out.println(buildPalindromeMethod("abcabc"));// abcabc bacba - 5
+        System.out.println(buildPalindromeMethod("cbdbedffcg"));// cbdbedffcg cffdebdbc - 9
 
-        // System.out.println(buildPalindromeMethod("aaa"));// aaa
-        //System.out.println(buildPalindromeMethod("bba"));// bba bb
-        // System.out.println(buildPalindromeMethod("cxa"));// cxa xc
-        // System.out.println(buildPalindromeMethod("baa"));// baa b
+        // Custom tests:
+        System.out.println(buildPalindromeMethod("aaa"));// aaa
+        System.out.println(buildPalindromeMethod("bba"));// bba bb
+        System.out.println(buildPalindromeMethod("cxa"));// cxa xc
+
+        System.out.println(buildPalindromeMethod("baa"));// baa b
     }
 }
