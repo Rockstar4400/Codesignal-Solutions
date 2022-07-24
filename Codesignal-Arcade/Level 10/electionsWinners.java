@@ -49,10 +49,18 @@ Guaranteed constraints:
 
  */
 
+import java.util.Arrays;
+
 public class electionsWinners {
 
     static public int electionsWinnersMethod(int[] votes, int k) {
-        return 1;
+        int max = Arrays.stream(votes).max().getAsInt();
+        return k == 0 ? 
+        Arrays.stream(votes)
+        .filter(x -> x == max).count() == 1 ?
+        1 : 0 : 
+        (int) Arrays.stream(votes)
+        .filter(x -> x + k > max).count();
     }
     public static void main(String[] args) {
         int[] votes1 = {2, 3, 5, 2};
